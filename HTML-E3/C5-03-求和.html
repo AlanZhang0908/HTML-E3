@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求两数字之和</title>
+    <style type="text/css">
+        span{
+            color: red;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        td{
+            width: 130px;
+        }
+
+        /*
+        属性选择器: [属性名=属性值]
+        */
+        /*type属性值为text的input元素 -> 文本框*/
+        input[type="text"]{
+            background-color: burlywood;
+            border-radius: 5px;
+        }
+
+        input[type="button"]{
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!--当不通过表单提交数据时，可以不使用form-->
+    <table align="center">
+        <tr>
+            <td>数字1：</td>
+            <td><input id="num1" type="text" /></td>
+            <td><span id="span1"></span></td>
+        </tr>
+        <tr>
+            <td>数字2：</td>
+            <td><input id="num2" type="text" /></td>
+            <td><span id="span2"></span></td>
+        </tr>
+        <tr>
+            <td>两数字之和：</td>
+            <td><input id="result" type="text" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="button" value="计算" onclick="sum()"/></td>
+        </tr>
+    </table>
+    
+    <script>
+        function sum(){
+            // 获取用户输入的数据
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            document.getElementById("result").value = "";
+
+            var span1 = document.getElementById("span1");
+            var span2 = document.getElementById("span2");
+            span1.innerHTML = "";
+            span2.innerHTML = "";
+
+            // 校验用户输入的数据
+            // 必填校验
+            if(num1 == ""){
+                span1.innerHTML = "必填！";
+                return;
+            }
+
+            if(num2 == ""){
+                span2.innerHTML = "必填！";
+                return;
+            }
+
+            // 校验数字
+            if(isNaN(num1)){
+                span1.innerHTML = "必须填写数字！";
+                return;
+            }
+            if(isNaN(num2)){
+                span2.innerHTML = "必须填写数字！";
+                return;
+            }
+
+            document.getElementById("result").value = 
+            parseInt(num1) + parseInt(num2);
+
+        }
+
+        // 代码重构,单独抽出一个校验方法
+        function validate(){
+
+        }
+    </script>
+</body>
+</html>

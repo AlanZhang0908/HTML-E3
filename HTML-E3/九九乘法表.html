@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            background-color: pink;
+        }
+        table{
+            text-align: right;
+            border: none;
+            border-spacing: 5px; 
+            color:white;
+            margin: 60px ;
+        }
+        table th{
+            padding: 5px;
+            border: green 1px solid;
+            background-color: green;
+            border-radius: 20px;
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        document.write("<table>");
+        for (var x = 1; x <= 9; x++)  
+        {  
+            document.write("<tr>");  
+            for (var y = 1; y <= x; y++)  
+            {  
+                document.write("<th>"+y+"*"+x+"="+y*x+"</th>");  
+            }  
+            document.write("</tr>");  
+        }  
+        document.write("</table>");  
+    </script>
+    
+</body>
+</html>
